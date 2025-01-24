@@ -7,19 +7,20 @@ export default async function Home() {
 
   return (
     <main className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Latest Blog Posts</h1>
+      <h1 className="text-3xl font-bold mb-4">All Blog Posts</h1>
       <div className="grid gap-4">
-        {posts.slice(0, 10).map((post) => (
+        {posts.map((post) => (
           <Card key={post.id}>
             <CardHeader>
+            <h1 className="font-bold">Blog: {post.id}</h1>
               <CardTitle className="text-lg">
-                <Link href={`/blog/${post.id}`} className="hover:underline">
+              <Link href={`/blog/${post.id}`} className="hover:underline">
                   {post.title}
-                </Link>
+              </Link>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">Click to read more...</p>
+              <p className="text-gray-600">Click title to read more...</p>
             </CardContent>
           </Card>
         ))}

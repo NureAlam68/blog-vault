@@ -17,6 +17,7 @@ export default async function BlogDetails({ params }) {
     <main className="max-w-3xl mx-auto p-6">
       <Card className="shadow-lg">
         <CardHeader>
+        <h1 className="font-bold">Blog: {post.id}</h1>
           <CardTitle className="text-3xl font-bold">{post.title}</CardTitle>
         </CardHeader>
         <CardContent>
