@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default async function Home() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -12,9 +13,9 @@ export default async function Home() {
           <Card key={post.id}>
             <CardHeader>
               <CardTitle className="text-lg">
-                <a href={`/blog/${post.id}`} className="hover:underline">
+                <Link href={`/blog/${post.id}`} className="hover:underline">
                   {post.title}
-                </a>
+                </Link>
               </CardTitle>
             </CardHeader>
             <CardContent>
